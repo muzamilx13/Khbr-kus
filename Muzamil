@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>muzamilx13*</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #6610f2 30%, #13b0a3 100%);
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      margin: 0; padding: 0;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 650px;
+      margin: 60px auto 0;
+      background: rgba(15,22,50,0.9);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.22);
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.4rem;
+      letter-spacing: 3px;
+      margin-bottom: 7px;
+      text-align: center;
+    }
+    p {
+      color: #ccc;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    label, input, textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 16px;
+      font-size: 1.15rem;
+      border-radius: 7px;
+      border: none;
+      padding: 10px;
+      background: #20265d;
+      color: #fff;
+      outline: none;
+    }
+    label {
+      font-family: 'Orbitron', sans-serif;
+      background: none;
+      color: #13b0a3;
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+    button {
+      background: #13b0a3;
+      color: #fff;
+      font-weight: bold;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      box-shadow: 0 6px 12px #10204070;
+      transition: background 0.2s;
+      margin-bottom: 20px;
+    }
+    button:hover {
+      background: #1769aa;
+    }
+    #output {
+      min-height: 60px;
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+      font-family: 'Roboto Mono', monospace;
+      background: #222;
+      border-radius: 7px;
+      padding: 12px;
+      word-break: break-all;
+      color: #13b0a3;
+    }
+    .about {
+      font-size: 1.08rem;
+      margin-top: 25px;
+      padding: 15px;
+      background: #1b2243;
+      border-radius: 14px;
+    }
+    .copy-btn {
+      margin-bottom: 10px;
+      background: #fdc10a;
+      color: #2b2e41;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 7px 18px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover {
+      background: #ffd633;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>muzamilx13*</h1>
+    <p>Multiply any text by your choice, copy & paste easily! Be cool, be limitless.</p>
+    <form id="mainForm" onsubmit="event.preventDefault(); multiplyText();">
+      <label for="userText">Type Anything:</label>
+      <textarea id="userText" rows="3" placeholder="Write your text here..." required></textarea>
+      <label for="times">How many times?</label>
+      <input type="number" id="times" min="1" max="1000" value="1" required>
+      <button type="submit">Show Result</button>
+    </form>
+    <button class="copy-btn" onclick="copyResult()">Copy Result</button>
+    <div id="output"></div>
+    <div class="about">
+      <strong>About muzamilx13*:</strong>
+      <br>
+      This website is designed to make your life easier and cooler! Repeat any text as many times as you want and copy it with one click. Whether you're a student, meme lover, or just having fun – Multiply your words, spread positivity, and creativity! Designed by <b>muzamilx13*</b> for everyone who loves style, fun, and tech!
+    </div>
+  </div>
+  <script>
+    function multiplyText() {
+      var text = document.getElementById('userText').value;
+      var times = parseInt(document.getElementById('times').value);
+      var result = '';
+      for(let i=0; i<times; i++) { result += text + ' '; }
+      document.getElementById('output').innerText = result.trim();
+    }
+    function copyResult() {
+      var output = document.getElementById('output').innerText;
+      if(output.length) {
+        navigator.clipboard.writeText(output);
+        alert('Copied!');
+      }
+    }
+  </script>
+</body>
+</html>
